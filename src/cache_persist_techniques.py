@@ -15,6 +15,7 @@ df=spark.createDataFrame(data,column_name)
 #Filter rows based on a condition.
 df1=df.filter(df.marks>80)
 print("to check wewther the cahe is working properly or not")
+#CACHE
 df1.cache()
 #Select specific columns from the DataFrame.
 df1.select("usn","name","marks").show()
@@ -31,6 +32,7 @@ df1.select("usn","name","marks").show()
 
 #Add a new column or modify an existing one.
 df1.withColumn("marks > 80",df1["marks"]>80).show()
+
 
 
 
